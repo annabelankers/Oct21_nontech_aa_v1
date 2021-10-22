@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Review 1</title>
+</head>
+<body>
+    <article>
+        <header></header>
+        <section>
+            <input id='entr' placeholder="Enter your guess"/>
+            <button id='btnGo'>Go</button>
+        </section>
+        <section>
+            <aside id='feedback'>Watch here...</aside>
+        </section>
+        <footer></footer>
+    </article>
+    <script>
+        let count = 0
+        message = ''
+        target = Math.floor(Math.random()*100)
+        //let guess = entr.value
+                     
+        // add click-event listener button
+        const handleButton = ()=> {
+            count++
+            if (guess == target) {
+                message += `Correct`
+            } else if (guess > target) {
+                message += `Too high`
+            } else if (guess < target) {
+                message += `Too low`
+            }
+            feedback.innerHTML = message
+        }
+        
+        btnGo.addEventListener('click', handleButton)
+
+    </script>
+    
+</body>
+</html>
